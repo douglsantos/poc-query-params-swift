@@ -4,12 +4,20 @@ var components = URLComponents()
 
 components.scheme = "https"
 components.host = "api.lojafeliz.com"
-components.path = "/seguros"
+components.path = "/destinos"
 
-let queryItemViagem = URLQueryItem(name: "codigo_familia", value: "viagem")
-let queryItemAP = URLQueryItem(name: "codigo_familia", value: "acidentes_pessoais")
-let queryItemVida = URLQueryItem(name: "codigo_familia", value: "vida")
+let queryItemSP = URLQueryItem(name: "codigo_destino", value: "sao_paulo")
+let queryItemMG = URLQueryItem(name: "codigo_destino", value: "minas_gerais")
+let queryItemRJ = URLQueryItem(name: "codigo_destino", value: "rio_janeiro")
 
-components.queryItems = [queryItemViagem, queryItemAP, queryItemVida]
+components.queryItems = [queryItemSP, queryItemMG, queryItemRJ]
+
+print(components)
+
+components.queryItems = [
+    URLQueryItem(name: "codigo_destino", value: "sao_paulo"), 
+    URLQueryItem(name: "codigo_destino", value: "minas_gerais"),
+    URLQueryItem(name: "codigo_destino", value: "rio_janeiro")
+    ]
 
 print(components)
